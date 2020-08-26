@@ -15,6 +15,8 @@
    		var upCase =$filter('uppercase');
    		$scope.name= upCase($scope.name);
    	}
-   }   
+   }
+
+      
 }
 )();
