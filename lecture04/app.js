@@ -5,7 +5,7 @@
    angular.module('MyFirstApp',[])
 
    .controller('MyFirstController',function ($scope) {
-   	         console.log($scope)
+   	        // console.log($scope)
            $scope.name="";
            $scope.totalValue=0;
 
