@@ -3,38 +3,30 @@
 
    angular.module('DependencyApp',[])
 
-   .controller('DependencyController', DependencyController)
-   .filter('loves',LovesFilter)
-   .filter('truth',TruthFilter);
+   .controller('DependencyController', DependencyController);
+ 
 
-   DependencyController.$inject =['$scope','lovesFilter'];
+   DependencyController.$inject =['$scope'];
   
-   function DependencyController($scope, lovesFilter){
+      function DependencyController($scope){
+         $scope.onceCounter =0;
+       //  console.log($scope)
 
-       $scope.sayMessage = function () {
-      var msg =" sagar likes biryani food and special items.";
-      return msg;
-    }
-    $scope.sayLovesMessage = function () {
-      var msg =" sagar likes biryani food and special items.";
-      msg= lovesFilter(msg);
-      return msg;
-    }
-   }
-    function LovesFilter() {
-      return function (input){
-         input =input || "";
-         input=input.replace("likes","loves");
-         return input;
-      }
-    }
+       $scope.showNumberOfWatchers = function () {
 
-    function TruthFilter() {
-      return function(input,target,replace){
-         input =input || "";
-         input=input.replace(target, replace);
-         return input;
+        console.log("# of watchesrs: ", $scope.$$watchersCount);
+       }
+
+       $scope.countOnce = function (){
+        $scope.onceCounter =1;
+       }
+
+       $scope.$watch('onceCounter',function(newValue , oldValue){
+        console.log("old valus ::",oldValue);
+        console.log("new value  :",newValue)
+       });
+
       }
-    }
+   
 }
 )();

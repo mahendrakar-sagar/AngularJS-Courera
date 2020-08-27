@@ -7,13 +7,13 @@
 
 </head>
 <body>
-<h1>Custom Filter part 1</h1>
+<h1>Digest Life cycle</h1>
    <div ng-controller="DependencyController">
-   	Original msg : {{sayMessage()}}<br>
-   	Loves msg :  {{sayLovesMessage()}}<br>
-   	Truth:     {{sayLovesMessage() | truth : 'special': 'fastfood'}}<br>
-   		Big Truth:     {{sayLovesMessage() | truth : 'special': 'fastfood' | uppercase}}
-
+   	<button ng-click="showNumberOfWatchers()">Log 
+   	# of watchers</button>
+      <div>
+      	<button ng-click="countOnce()">Up Once Counter (once) </button>
+      </div>
 
    </div>
 </body>
